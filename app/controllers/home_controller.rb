@@ -1,8 +1,12 @@
 class HomeController
   def initialize(env)
     @env = env
+    @session = @env['rack.session']
   end
   def show
-    "<h1>Welcome to the Home Page</h1>"
+    
+    @session[:views] ||= 0
+    @session[:views] += 1
+    "<p>Welcome to the Home Page #{@session[:views]} lan </p>"
   end
 end
