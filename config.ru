@@ -1,3 +1,3 @@
-run proc{
-    |env|
-    [200, {"content-type" => "text/html"}, ["Hello World!"]] }
+require_relative 'lib/frack/router'
+
+run Frack::Router.new
